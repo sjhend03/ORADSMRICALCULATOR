@@ -77,13 +77,13 @@ b {
   transition: all 0.5s ease;
 }
 
-.calculator-wrapper footer button {
+footer button {
   background-color: transparent;
   border: none;
   color: var(--green);
 }
 
-.calculator-wrapper footer button:hover {
+footer button:hover {
   cursor: pointer;
 }
 
@@ -188,12 +188,12 @@ button:hover {
   padding: 20px;
 }
 
-.calculator-wrapper footer {
+footer {
   margin: 30px var(--margin) 10px var(--margin);
   font-size: 0.8rem;
 }
 
-.calculator-wrapper footer p {
+footer p {
   margin: 20px 0;
 }
 

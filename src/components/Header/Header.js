@@ -15,7 +15,7 @@ function Header() {
                 <NavLink to='/quick-guide' className='nav-button'>Calculator Quick Guide</NavLink>
                 <NavLink to='/authors' className='nav-button'>Authors</NavLink>
                 <NavLink to='/technical-requirements' className='nav-button'>Technical Requirements</NavLink>
-                <button className='nav-button'>Research WIP</button>
+                <NavLink to='/research' className='nav-button'>Research</NavLink>
             </nav>
         </div>
     )

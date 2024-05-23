@@ -19,7 +19,7 @@ const questionDescriptions = {
     Q4baa: 'Is the fluid content simple or endometriotic?'
 }*/
 
-function Questions({questions}) {
+function Questions({questions, questionValues}) {
 
     /*// States of Questions
     const [dropdown1, setDropdown1] = useState('select');
@@ -115,14 +115,14 @@ function Questions({questions}) {
             <p>*Solid Tissue: Enhancing papillary projection, nodule, irregular septation/wall, solid lesion. Note: Thin smooth septations are NOT solid tissue.</p>
             <Question number={'4ab'} description={questionDescriptions.Q4ab} shown={Q4ab} dropdown2={dropdown2} changeDropdown2={changeDropdown2}/>
             <Question number={'4b'} description={questionDescriptions.Q4b} shown={Q4b}/>
-            <Question number={'4ba'} description={questionDescriptions.Q4ba} shown={Q4ba}/>
+            <Question number={'4ba'} description={questionDescriptions.Q4ba} shown={Q4ba}/>style?.div !== undefined ? style.div : null
             <Question number={'4baa'} description={questionDescriptions.Q4baa} shown={Q4baa}/>
             <div>{questions.Q1}</div>
         </div>
     ) */
     return (
         <div className='questions'>
-            {questions.map(question => <Question title={question.title} description={question.description} callback={question.callback} type={question.type} style={question.style} options={question.options} />)}
+            {questions.map(question => <Question title={question.title} description={question.description} callback={question.callback} value={questionValues?.[question.id] !== undefined ? questionValues[question.id] : ''} type={question.type} selector={question.selector} style={question.style} id={question.id} options={question.options} />)}
         </div>
     )
 }

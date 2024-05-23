@@ -1,0 +1,105 @@
+#login-wrapper,
+#loading-wrapper {
+    margin: 10% 40%;
+    padding: 2% 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    flex-direction: column;
+}
+
+#login-wrapper {
+    border: 1px solid var(--green);
+}
+
+#login-wrapper input {
+    margin-bottom: 3%;
+}
+
+#login {
+    background-color: var(--green);
+    border: none;
+    color: var(--light-blue);
+    padding: 3px 40px;
+    transition: all 0.2s ease;
+}
+
+#login:hover {
+    opacity: 50%;
+}
+
+#loading-wrapper {
+    transform: translateY(15vh);
+}
+
+#login-loading-circle-1, 
+#login-loading-circle-2,
+#login-loading-circle-3,
+#login-loading-circle-4, 
+#login-loading-text {
+    position: absolute;
+}
+
+#login-loading-circle-1{
+    background-color: var(--green);
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+}
+
+#login-loading-circle-2{
+    width: 200px;
+    height: 200px;
+    background-color: var(--dark-blue);
+    border-radius: 50%;
+}
+
+#login-loading-circle-3 {
+    width: 250px;
+    height: 125px; /* as the half of the width */
+    background-color: var(--dark-blue);
+    border-top-left-radius: 125px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 125px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+    transform: translateY(-50%);
+    animation-name: loading-circle-3;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#login-loading-circle-4 {
+    width: 250px;
+    height: 125px; /* as the half of the width */
+    background-color: var(--dark-blue);
+    border-top-left-radius: 125px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 125px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+    transform: rotate(180deg) translateY(-50%);
+    animation-name: loading-circle-4;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading-circle-4 {
+    0% {
+        transform: rotate(180deg) translateY(-50%);
+    }
+    100% {
+        transform: rotate(540deg) translateY(-50%);
+    }
+}
+
+@keyframes loading-circle-3 {
+    0% {
+        transform: rotate(0deg) translateY(-50%);
+    }
+    100% {
+        transform: rotate(360deg) translateY(-50%);
+    }
+}
+
+#login-loading-text {
+    font-size: large;
+}

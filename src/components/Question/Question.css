@@ -6,15 +6,32 @@
 }
   
 .question-btn-yes,
-.question-btn-no {
-  font-size: 10px;
-  margin: 0 10px;
-  height: 30px;
-  width: 50px;
+.question-btn-no,
+.question-btn {
+  font-size: 14px;
   border: none;
+  margin: 0px 10px;
+  width: 60px;
+  padding: 7px 1px;
   background-color: var(--light-blue);
   color: white;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease;
+}
+
+.question-btn {
+  width: fit-content;
+  padding: 7px 10px;
+}
+
+.question-btn:hover,
+.question-btn-yes:hover {
+  background-color: var(--green);
+  color: var(--dark-blue);
+}
+
+.question-btn-no:hover  {
+  background-color: #ff4545;
+  color: var(--dark-blue);
 }
   
 .question-dropdown {
@@ -24,24 +41,9 @@
   width: 200px;
   margin-left: 20px;
 }
-
-.question-btn-no:hover,
-.question-btn-yes:hover {
-    opacity: 0.7;
-}
-  
-.question-btn-yes {
-  background-color: var(--green);
-  color: var(--dark-blue);
-}
-  
-.question-btn-no {
-  background-color: rgb(255, 69, 69);
-  color: var(--dark-blue);
-}
   
 .question p {
-  margin: 10px 0;
+  margin: 10px 0px;
   font-size: 1rem;
   color: var(--green);
 }
@@ -49,5 +51,25 @@
 
 .question p span {
   color: white;
+  margin-left: 10px;
 }
   
+.question input,
+.question select {
+  background-color: #ff454500;
+  border: none;
+  padding:  2px;
+  margin-left: 20px;
+  color: white;
+  
+}
+
+.question input {
+  border-bottom: white 1px solid;
+}
+
+.question select {
+  border: white 1px solid;
+  width: auto;
+  height: auto;
+}

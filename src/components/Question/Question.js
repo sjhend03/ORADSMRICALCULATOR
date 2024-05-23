@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCalculatorQuestions, setQuestion } from '../../features/calculatorQuestionsSlice';
 import './Question.css'
 
-function Question({ title, description, callback, type, style, options }) {
+function Question({ title, description, callback, type, style, options, id, value }) {
 
     /*// Redux State for Questions
     const dispatch = useDispatch();
@@ -81,20 +81,35 @@ function Question({ title, description, callback, type, style, options }) {
             <button className={questions[`Q${props.number}`] === false ? 'question-no question-button btn-no' : 'question-button btn-no'} onClick={() => updateQuestion(false)}>no</button>
         </div>
     )*/
+    
+     
+
     return (
-        <div className='question' >
-            <p className='question-title'>{title}<span className='question-description'>{description}</span></p>
+        <div className='question' id={id} style={style?.div !== undefined ? style.div : null} >
+            <p className='question-title' style={style?.p !== undefined ? style.p : null}>{title}<span className='question-description' style={style?.span !== undefined ? style.span : null}>{description}</span></p>
             {type === 'boolean' ? (
                 <>
-                <button value='true' className='question-btn-yes' onClick={callback}>yes</button>
-                <button value='false' className='question-btn-no' onClick={callback}>no</button>
+                <button value='true' className='question-btn-yes' style={style.yes} onClick={callback} >yes</button>
+                <button value='false' className='question-btn-no' style={style.no} onClick={callback} >no</button>
                 </>
             ) : ''}
             {type === 'dropdown' ? (
-                <select className='question-dropdown' onChange={callback}>
-                    <option value='select'>Select an option</option>
+                <select className='question-dropdown' value={value} onChange={callback} onClick={() => {
+                    console.log(value)
+                }} style={style.select}>
+                    <option value='select' style={style.option}>Select an option</option>
                     {options.map(option => <option value={option.value}>{option.description}</option>)}
                 </select>
+            ) : ''}
+            {type === 'choice' ? (
+                <>
+                {options.map(option => <button style={option.style} value={option.value} className={'question-btn'} onClick={callback}>{option.description}</button>)}
+                </>
+            ) : ''}
+            {type === 'text' ? (
+                <>
+                    <input type='text'placeholder='input here' value={value} onChange={callback}/>
+                </>
             ) : ''}
         </div>
     )
